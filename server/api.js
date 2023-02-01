@@ -1,10 +1,11 @@
+// All methods defined here, are public available as API for the client
 module.exports = {
     saveUsername(req, res) {
         console.log("Request: ", req.body);
-        // save username
+        // TODO: save username
         res.send({
             success: "true",
-            message: "That was nice!"
+            message: "Saved username."
         });
     },
     log(req, res) {

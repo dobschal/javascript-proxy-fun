@@ -1,19 +1,21 @@
 import { server } from "./serverProxy.js";
 
+let username;
 createUI();
 
-let username;
-
 /**
- * User wants to save username.
+ * Scenario: User wants to save username, form submit.
+ * --> Use the server proxy instance to call the server
  * @param {SubmitEvent} event 
  */
 async function onFormSubmit(event) {
     event.preventDefault();
-    console.log("Nice, your name is: ", username);
     const response = await server.log({ username, something: "Else" });
-    console.log("Response: ", response);
+    console.log("Response: ", username);
+
 }
+
+
 
 /**
  * User typed username into input field.
